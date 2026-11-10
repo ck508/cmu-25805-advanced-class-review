@@ -1,0 +1,14 @@
+# Local design exploration and verification tools
+.tools/
+.tools-pw/
+archive/
+design-demos/
+refs/
+scripts/
+
+# Working notes are kept in the local project, not on the public website
+*.md
+
+# Temporary files
+*.tmp
+*.log

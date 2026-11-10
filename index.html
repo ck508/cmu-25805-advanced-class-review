@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#174b40">
+<title>同心同行 · 25级长学制八临五班</title>
+<style>
+  :root{
+    --paper:#f7f2e7;
+    --paper-2:#eee7d8;
+    --green:#174b40;
+    --ink:#1b2925;
+    --red:#bf5439;
+    --gold:#e9b84a;
+    --muted:#68726b;
+    --line:rgba(27,41,37,.18);
+    --display:"Songti SC","STSong","SimSun",serif;
+    --sans:"Microsoft YaHei","PingFang SC",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}
+  a{color:inherit}
+  button,a{-webkit-tap-highlight-color:transparent}
+  img{display:block;max-width:100%}
+  .shell{width:min(1180px,calc(100% - 48px));margin:auto}
+  .skip{position:fixed;left:12px;top:-60px;background:#fff;padding:10px 14px;z-index:100}.skip:focus{top:12px}
+  header{background:rgba(247,242,231,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;backdrop-filter:blur(14px)}
+  .topbar{min-height:76px;display:flex;align-items:center;gap:18px;justify-content:space-between}
+  .identity{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+  .identity img{width:48px;height:48px;object-fit:contain}
+  .identity b{display:block;font:700 18px/1.2 var(--display);letter-spacing:.04em}
+  .identity span{display:block;font-size:11px;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+  nav{display:flex;gap:5px}
+  nav a{text-decoration:none;font-size:14px;padding:10px 12px;border-radius:4px;white-space:nowrap}
+  nav a:hover,nav a:focus-visible{background:rgba(23,75,64,.09)}
+  main{overflow:hidden}
+  .hero{padding:78px 0 44px;position:relative}
+  .halo{position:absolute;right:-250px;top:-260px;width:770px;height:770px;border:1px solid rgba(191,84,57,.25);border-radius:50%;pointer-events:none}
+  .halo:before,.halo:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(23,75,64,.16)}
+  .halo:before{inset:90px}.halo:after{inset:175px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center;position:relative}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:700}
+  h1{font:700 clamp(54px,6.5vw,94px)/.98 var(--display);letter-spacing:-.05em;margin:18px 0 24px;max-width:680px}
+  h1 em{color:var(--red);font-style:normal}
+  .lead{font-size:clamp(17px,2vw,21px);line-height:1.8;max-width:620px;color:#3f4d47;margin:0}
+  .lead strong{color:var(--green)}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{min-height:48px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--green);background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;border-radius:3px;transition:transform .18s ease,background .18s}
+  .btn.alt{background:transparent;color:var(--green)}
+  .btn:hover{transform:translateY(-2px);background:#0f382f}.btn.alt:hover{background:rgba(23,75,64,.07)}
+  .hero-media{position:relative;padding:0 16px 18px 0}
+  .hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:180px 4px 4px 4px;filter:saturate(.82) contrast(.98)}
+  .hero-media:after{content:"2025—2026";position:absolute;right:0;bottom:0;background:var(--red);color:white;font-size:11px;letter-spacing:.14em;padding:10px 13px}
+  .hero-media img.class-mark{position:absolute;left:-50px;bottom:-20px;width:150px;height:150px;aspect-ratio:1;object-fit:contain;background:var(--paper);border-radius:50%;padding:12px;box-shadow:0 0 0 1px rgba(23,75,64,.15)}
+  .mini-facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:28px}
+  .mini-fact{padding:23px 22px;border-right:1px solid var(--line);min-height:112px}
+  .mini-fact:last-child{border-right:0}
+  .mini-fact strong{display:block;font-size:clamp(28px,3vw,42px);line-height:1;color:var(--green);letter-spacing:-.04em}
+  .mini-fact strong b{font-size:.5em;color:var(--red)}
+  .mini-fact span{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+  section{padding:84px 0}
+  .section-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:end;margin-bottom:42px}
+  .section-head h2{font:700 clamp(38px,5vw,62px)/1.06 var(--display);letter-spacing:-.04em;margin:0;color:var(--green)}
+  .section-head p{margin:0;font-size:16px;color:#4b5852;max-width:580px;justify-self:end}
+  .verify{background:#fffdf7;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .quick-files{display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:16px}
+  .file-hero{background:var(--green);color:white;padding:28px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;position:relative;overflow:hidden}
+  .file-hero:after{content:"PPT";position:absolute;right:-10px;bottom:-26px;font:700 124px/1 var(--display);color:rgba(255,255,255,.07)}
+  .file-hero small,.file-card small{font-size:11px;letter-spacing:.12em;font-weight:700}
+  .file-hero b{font:700 30px/1.25 var(--display);position:relative;z-index:1;max-width:78%}
+  .file-hero span{font-size:13px;color:rgba(255,255,255,.76)}
+  .file-card{border:1px solid var(--line);padding:28px 24px;min-height:240px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);transition:background .18s,transform .18s}
+  .file-card:hover{background:#f1eadb;transform:translateY(-2px)}
+  .file-card b{font:700 25px/1.25 var(--display)}
+  .file-card span{font-size:12px;color:var(--muted)}
+  .evidence-lines{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px;align-items:start}
+  .photos{display:grid;grid-template-columns:1fr .72fr;grid-template-rows:330px 190px;gap:12px}
+  .photos img{width:100%;height:100%;object-fit:cover;filter:saturate(.78)}
+  .photos img:first-child{grid-row:1/3}
+  .photos img:nth-child(3){object-position:center 42%}
+  .evidence-copy p{font-size:17px;line-height:1.9;margin:0 0 24px;color:#45524c}
+  .evidence-list{border-top:1px solid var(--line)}
+  .evidence-item{display:grid;grid-template-columns:42px 1fr auto;gap:15px;padding:17px 0;border-bottom:1px solid var(--line);align-items:start}
+  .evidence-item i{font-style:normal;font-family:var(--display);color:var(--red);font-size:20px;line-height:1.2}
+  .evidence-item b{display:block;font-size:16px;margin-bottom:2px}
+  .evidence-item span{font-size:13px;color:var(--muted);line-height:1.55}
+  .evidence-item a{font-size:12px;text-decoration:none;color:var(--green);border-bottom:1px solid currentColor;padding:2px}
+  .numbers{background:var(--green);color:#fff;position:relative;overflow:hidden}
+  .numbers:after{content:"33";position:absolute;right:-20px;bottom:-120px;font:700 560px/1 var(--display);color:rgba(255,255,255,.035);letter-spacing:-.1em}
+  .number-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.25);position:relative;z-index:1;margin-top:44px}
+  .number{padding:26px;border-right:1px solid rgba(255,255,255,.18);min-height:180px}
+  .number:last-child{border-right:0}.number strong{font-size:clamp(48px,7vw,88px);line-height:1;display:block;color:#fff;font-weight:800;letter-spacing:-.06em}.number strong small{font-size:.32em;letter-spacing:0;color:var(--gold)}.number p{font-size:13px;color:rgba(255,255,255,.7);margin:15px 0 0}
+  .slides-wrap{display:grid;grid-template-columns:310px 1fr;gap:44px;align-items:start}
+  .slides-note{position:sticky;top:108px}
+  .slides-note h2{margin:0 0 18px}
+  .slides-note p{font-size:15px;line-height:1.8;color:#56625c;margin-bottom:22px}
+  .slides-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .slide{border:0;padding:0;background:none;cursor:pointer;text-align:left;min-width:0}
+  .slide img{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid rgba(27,41,37,.16);transition:transform .2s}
+  .slide span{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+  .slide:hover img{transform:translateY(-3px)}
+  .files{background:#fffdf7;border-top:1px solid var(--line)}
+  .file-list{border-top:2px solid var(--green)}
+  .file-row{display:grid;grid-template-columns:1.1fr 2.1fr auto auto;gap:20px;align-items:center;padding:19px 5px;border-bottom:1px solid var(--line);text-decoration:none}
+  .file-row strong{font:700 19px/1.3 var(--display);color:var(--green)}
+  .file-row span{font-size:13px;color:var(--muted)}
+  .file-row small{font-size:11px;color:var(--muted);white-space:nowrap}
+  .file-row i{font-style:normal;font-size:20px;color:var(--red)}
+  .file-row:hover strong{text-decoration:underline;text-underline-offset:4px}
+  .thanks{padding:0 0 70px}
+  .thanks-card{background:var(--red);color:#fff;padding:70px clamp(28px,7vw,90px);display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;position:relative;overflow:hidden}
+  .thanks-card:before{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(255,255,255,.26);border-radius:50%;right:-120px;top:-200px;box-shadow:0 0 0 60px rgba(255,255,255,.035),0 0 0 120px rgba(255,255,255,.025)}
+  .thanks-card h2{font:700 clamp(55px,8vw,104px)/.95 var(--display);letter-spacing:-.05em;margin:0 0 17px}
+  .thanks-card p{font-size:16px;line-height:1.85;color:rgba(255,255,255,.82);max-width:620px;margin:0}
+  .thanks-card img{width:150px;height:150px;object-fit:contain;background:var(--paper);border-radius:50%;padding:10px;position:relative;z-index:1}
+  footer{padding:0 0 36px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
+  dialog{width:min(1120px,calc(100% - 28px));padding:0;border:0;background:#13231e;color:white}
+  dialog::backdrop{background:rgba(8,18,15,.86)}
+  .dialog-head{min-height:56px;display:flex;align-items:center;justify-content:space-between;padding:8px 14px;font-size:13px}
+  .dialog-head button{width:44px;height:44px;border:1px solid rgba(255,255,255,.3);background:transparent;color:white;font-size:20px;cursor:pointer}
+  .dialog-body{position:relative;background:#09110e;display:flex;align-items:center;min-height:45vh}
+  .dialog-body img{width:100%;max-height:76vh;object-fit:contain}
+  .nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;background:rgba(255,255,255,.9);color:#111;font-size:22px;cursor:pointer}.nav-btn.prev{left:12px}.nav-btn.next{right:12px}
+  @media (max-width:900px){
+    .shell{width:min(100% - 32px,720px)}
+    .hero-grid,.section-head,.evidence-lines,.slides-wrap{grid-template-columns:1fr;gap:34px}
+    .hero{padding-top:46px}.hero-media{max-width:640px;padding-right:12px}.hero-media img.class-mark{left:-16px;width:112px;height:112px}
+    .mini-facts{grid-template-columns:1fr 1fr}.mini-fact:nth-child(2){border-right:0}.mini-fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .section-head p{justify-self:start}.quick-files{grid-template-columns:1fr 1fr}.file-hero{grid-column:1/-1;min-height:210px}
+    .number-grid{grid-template-columns:1fr 1fr}.number:nth-child(2){border-right:0}.number:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.18)}
+    .slides-note{position:static}.slides-strip{grid-template-columns:1fr 1fr}
+    nav a{padding:10px 8px;font-size:13px}
+  }
+  @media (max-width:620px){
+    .shell{width:calc(100% - 28px)}
+    .topbar{min-height:66px}.identity img{width:40px;height:40px}.identity b{font-size:15px}.identity span{display:none}
+    nav{max-width:52vw;overflow-x:auto;scrollbar-width:none}.topbar{gap:8px}
+    h1{font-size:52px}.lead{font-size:16px}.hero-grid{gap:26px}.actions .btn{flex:1 1 46%}
+    .mini-fact{padding:18px 14px;min-height:102px}.mini-fact strong{font-size:30px}
+    section{padding:62px 0}.section-head{margin-bottom:28px}
+    .quick-files,.photos,.slides-strip{grid-template-columns:1fr}.photos{grid-template-rows:300px 210px}
+    .photos img:first-child{grid-row:auto}.photos img:first-child{grid-column:1}
+    .file-row{grid-template-columns:1fr auto;gap:7px 12px}.file-row span{grid-column:1/2}.file-row small{grid-column:1/2}.file-row i{grid-column:2;grid-row:1/4}
+    .thanks-card{grid-template-columns:1fr;padding:44px 26px}.thanks-card img{width:108px;height:108px}
+    footer{display:block}footer span{display:block;margin:5px 0}
+    .evidence-item{grid-template-columns:30px 1fr}.evidence-item a{grid-column:2;justify-self:start;margin-top:5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header>
+  <div class="shell topbar">
+    <a class="identity" href="#top" aria-label="返回页首">
+      <img src="assets/logos/school-emblem.png" alt="首都医科大学校徽">
+      <div><b>25级长学制八临五班</b><span>首都医科大学 · 基础医学院</span></div>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#verify">材料核验</a>
+      <a href="#story">成长线索</a>
+      <a href="#slides">答辩PPT</a>
+      <a href="#files">全部文件</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="halo" aria-hidden="true"></div>
+    <div class="shell">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">2025—2026 学年 · 校级先进班集体答辩</div>
+          <h1>33个人，<br>一起答这份<em>卷</em>。</h1>
+          <p class="lead">各位评委老师好。这里把班级一年里的<strong>共同经历、关键数据和原始材料</strong>放在了一起。您可以从最关心的证据开始看，也可以直接打开答辩 PPT。</p>
+          <div class="actions">
+            <a class="btn" href="#files">开始核验材料</a>
+            <a class="btn alt" href="files/defense-deck.pptx" download>下载答辩 PPT · 14.9 MB</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/photos/hero-class.webp" alt="25级长学制八临五班秋季班级合照">
+          <img class="class-mark" src="assets/logos/class-emblem-round.png" alt="25级临床医学5+3五班班徽">
+        </div>
+      </div>
+      <div class="mini-facts" aria-label="班级核心数据">
+        <div class="mini-fact"><strong>33</strong><span>名同学 · 一个共同集体</span></div>
+        <div class="mini-fact"><strong>97<b>%</b></strong><span>大学英语四级通过率</span></div>
+        <div class="mini-fact"><strong>28</strong><span>项班级共同活动</span></div>
+        <div class="mini-fact"><strong>11</strong><span>项体育活动荣誉</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="verify" id="verify">
+    <div class="shell">
+      <div class="section-head">
+        <h2>先找到<br>您要核验的材料。</h2>
+        <p>没有把材料藏在长文里。量化表、答辩 PPT 与主要证明材料都在第一屏之后，文件名和文件大小清楚可见。</p>
+      </div>
+      <div class="quick-files">
+        <a class="file-hero" href="#slides">
+          <small>答辩原文 / PPT</small>
+          <b>12 页答辩汇报，<br>现场看到的内容可以继续往下看。</b>
+          <span>在线预览 · 支持下载原文件</span>
+        </a>
+        <a class="file-card" href="files/quant-table.docx" download>
+          <small>基础事实 / DOCX</small>
+          <b>先进班集体<br>量化表</b>
+          <span>17 KB · 查看班级人数、学风、组织、获奖等原文</span>
+        </a>
+        <a class="file-card" href="#files">
+          <small>证明链条 / 9 个文件</small>
+          <b>活动与荣誉<br>原始资料</b>
+          <span>按体育、特色活动、团党建设、荣誉分类</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="shell">
+      <div class="section-head">
+        <h2>不是33份成绩单，<br>是一起成长的这一年。</h2>
+        <p>下面四组事实分别回答“方向从哪里来、学习怎么一起进步、日常为什么有温度、共同行动留下了什么”。</p>
+      </div>
+      <div class="evidence-lines">
+        <div class="photos">
+          <img src="assets/photos/sports-jump.webp" alt="班级参加校运会集体跳绳并获得第一名">
+          <img src="assets/photos/qingtuan.webp" alt="班级开展清明手作青团活动">
+          <img src="assets/photos/icebreaker.webp" alt="班级破冰主题活动合影">
+        </div>
+        <div class="evidence-copy">
+          <p><strong>同心同行，一起成为更好的我们。</strong>作为医学生，我们以敬畏生命为底色，以勤学笃行为共同语言。班级建设不是把每个人变成同一个答案，而是让 33 个人在需要时彼此看见、彼此托住。</p>
+          <div class="evidence-list">
+            <div class="evidence-item"><i>一</i><div><b>组织有方向</b><span>22 名同学参加党校普及班并全部合格；6 次主题团日，4 名新团员；2 次推优会议推荐 10 人，8 人成为入党积极分子。</span></div><a href="files/party-building.zip" download>看原始材料</a></div>
+            <div class="evidence-item"><i>二</i><div><b>学习有底气</b><span>医学专业课综合 85.45 分，年级第一；80 分以上占比 97.1%，年级最高；标准差 3.57，年级最小；课堂出勤率 96%。</span></div><a href="files/quant-table.docx" download>看量化表</a></div>
+            <div class="evidence-item"><i>三</i><div><b>日常有温度</b><span>班委协同、同学互助，共建班级公众号；博贤706、博慧楼225获得“星级宿舍”，班长与体委获评宿舍安全卫生积极分子。</span></div><a href="files/quant-table.docx" download>看班风原文</a></div>
+            <div class="evidence-item"><i>四</i><div><b>行动有回声</b><span>全年 28 项共同活动，体育 17 项、班级特色活动 12 项；11 项体育荣誉，其中 7 项进入前三、2 项全校第一。</span></div><a href="files/feature-activities.zip" download>看活动证明</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="numbers">
+    <div class="shell">
+      <div class="section-head">
+        <h2 style="color:#fff">每一个数字，<br>都有人一起完成。</h2>
+        <p style="color:rgba(255,255,255,.72)">这里的活动数按项目去重；荣誉按奖项条目统计。页面只展示能与材料和答辩口径相互对应的数字。</p>
+      </div>
+      <div class="number-grid">
+        <div class="number"><strong>32<small>人</small></strong><p>四级通过，通过率 97%</p></div>
+        <div class="number"><strong>22<small>人</small></strong><p>党校普及班学习并全部合格</p></div>
+        <div class="number"><strong>28<small>项</small></strong><p>体育与特色活动去重后的总数</p></div>
+        <div class="number"><strong>33<small>项</small></strong><p>奖项条目 · 以最新答辩材料口径为准</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="slides">
+    <div class="shell">
+      <div class="slides-wrap">
+        <div class="slides-note">
+          <div class="eyebrow">答辩 PPT · 12 PAGES</div>
+          <h2>现场讲到的，<br>这里都能再看。</h2>
+          <p>点击任意一页放大查看。也可以下载原始 PPT，核对完整内容和动画版式。</p>
+          <a class="btn" href="files/defense-deck.pptx" download>下载完整 PPT · 14.9 MB</a>
+        </div>
+        <div class="slides-strip" id="slideGrid">
+          <button class="slide" data-slide="1"><img src="assets/slides/slide-01.webp" alt="答辩PPT第1页"><span>封面 · 同心同行</span></button>
+          <button class="slide" data-slide="2"><img src="assets/slides/slide-02.webp" alt="答辩PPT第2页"><span>班级画像</span></button>
+          <button class="slide" data-slide="3"><img src="assets/slides/slide-03.webp" alt="答辩PPT第3页"><span>四条成长线</span></button>
+          <button class="slide" data-slide="5"><img src="assets/slides/slide-05.webp" alt="答辩PPT第5页"><span>组织建设</span></button>
+          <button class="slide" data-slide="6"><img src="assets/slides/slide-06.webp" alt="答辩PPT第6页"><span>学风成长</span></button>
+          <button class="slide" data-slide="8"><img src="assets/slides/slide-08.webp" alt="答辩PPT第8页"><span>活动全景</span></button>
+          <button class="slide" data-slide="10"><img src="assets/slides/slide-10.webp" alt="答辩PPT第10页"><span>体育荣誉</span></button>
+          <button class="slide" data-slide="11"><img src="assets/slides/slide-11.webp" alt="答辩PPT第11页"><span>综合荣誉</span></button>
+          <button class="slide" data-slide="12"><img src="assets/slides/slide-12.webp" alt="答辩PPT第12页"><span>结尾 · 下一程</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="files" id="files">
+    <div class="shell">
+      <div class="section-head">
+        <h2>原始资料，<br>按需要直接打开。</h2>
+        <p>文档保持提交时的原格式。压缩包内为对应的活动照片、证书或组织建设材料，手机端建议连接 Wi‑Fi 下载大文件。</p>
+      </div>
+      <div class="file-list">
+        <a class="file-row" href="files/quant-table.docx" download><strong>先进班集体量化表</strong><span>班级概况、学风、班风、党建、活动与获奖情况</span><small>DOCX · 17 KB</small><i>↓</i></a>
+        <a class="file-row" href="files/defense-deck.pptx" download><strong>答辩 PPT · 指定提交版</strong><span>现场答辩完整 12 页</span><small>PPTX · 14.9 MB</small><i>↓</i></a>
+        <a class="file-row" href="files/sports-materials.zip" download><strong>体育活动证明</strong><span>运动会、跳绳、球类与趣味项目材料</span><small>ZIP · 28.2 MB</small><i>↓</i></a>
+        <a class="file-row" href="files/feature-activities.zip" download><strong>班级特色活动证明</strong><span>主题班会、团日、劳育、联谊与出游</span><small>ZIP · 24.3 MB</small><i>↓</i></a>
+        <a class="file-row" href="files/party-building.zip" download><strong>班级党建材料</strong><span>党校普及班、推优入党等证明</span><small>ZIP · 31 KB</small><i>↓</i></a>
+        <a class="file-row" href="files/youth-league-building.zip" download><strong>团支部建设材料</strong><span>主题团日、新团员发展与组织建设</span><small>ZIP · 17.1 MB</small><i>↓</i></a>
+        <a class="file-row" href="files/honors-summary.xlsx" download><strong>基础医学院荣誉汇总</strong><span>2025—2026 学年荣誉明细</span><small>XLSX · 15.5 KB</small><i>↓</i></a>
+        <a class="file-row" href="files/scholarship-results.xlsx" download><strong>奖学金评定结果</strong><span>班级奖学金评定明细</span><small>XLSX · 11.4 KB</small><i>↓</i></a>
+        <a class="file-row" href="files/class-award-list.doc" download><strong>班级奖励名单</strong><span>首都医科大学本科、长学制班级奖励名单</span><small>DOC · 44 KB</small><i>↓</i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="thanks" id="thanks">
+    <div class="shell">
+      <div class="thanks-card">
+        <div>
+          <h2>感谢评审大大</h2>
+          <p>谢谢您认真看完这页资料，也谢谢每一份对 25级长学制八临五班的关注。同心同行，一起成为更好的我们。</p>
+        </div>
+        <img src="assets/logos/class-emblem-round.png" alt="25级临床医学5+3五班班徽">
+      </div>
+      <footer>
+        <span>首都医科大学 · 基础医学院 · 25级长学制八临五班</span>
+        <span>2025—2026 学年先进班集体答辩 · 评委资料页</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<dialog id="deckDialog" aria-label="答辩PPT预览">
+  <div class="dialog-head"><span id="dialogLabel">答辩 PPT · 第 1 页</span><button type="button" id="closeDialog" aria-label="关闭预览">×</button></div>
+  <div class="dialog-body">
+    <button class="nav-btn prev" type="button" id="prevSlide" aria-label="上一页">‹</button>
+    <img id="dialogImage" src="assets/slides/slide-01.webp" alt="答辩PPT大图">
+    <button class="nav-btn next" type="button" id="nextSlide" aria-label="下一页">›</button>
+  </div>
+</dialog>
+<script>
+  (() => {
+    const dialog = document.getElementById('deckDialog');
+    const image = document.getElementById('dialogImage');
+    const label = document.getElementById('dialogLabel');
+    let current = 1;
+    const render = () => {
+      image.src = `assets/slides/slide-${String(current).padStart(2,'0')}.webp`;
+      image.alt = `答辩PPT第${current}页大图`;
+      label.textContent = `答辩 PPT · 第 ${current} 页`;
+    };
+    document.querySelectorAll('[data-slide]').forEach(button => {
+      button.addEventListener('click', () => {
+        current = Number(button.dataset.slide);
+        render();
+        dialog.showModal();
+      });
+    });
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      current = current === 1 ? 12 : current - 1;
+      render();
+    });
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      current = current === 12 ? 1 : current + 1;
+      render();
+    });
+    document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+    document.addEventListener('keydown', event => {
+      if (!dialog.open) return;
+      if (event.key === 'ArrowLeft') document.getElementById('prevSlide').click();
+      if (event.key === 'ArrowRight') document.getElementById('nextSlide').click();
+    });
+  })();
+</script>
+</body>
+</html>
