@@ -24,10 +24,18 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Prepare compact Pages artifact
+        run: |
+          mkdir _site
+          cp -R index.html assets files deliverables _site/
+          rm -f _site/files/sports-materials.zip
+          rm -f _site/files/feature-activities.zip
+          rm -f _site/files/youth-league-building.zip
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
   deploy:
     environment:
